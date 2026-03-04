@@ -1,6 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import content from "@/../../content/portfolio.json";
+
+const heroContent = content.hero;
 
 interface HeroOverlayProps {
   opacity: number;
@@ -38,53 +41,58 @@ export default function HeroOverlay({ opacity }: HeroOverlayProps) {
           className="text-lg text-purple-300 md:text-xl"
           variants={item}
         >
-          Hello, my name is
+          {heroContent.greeting}
         </motion.p>
 
         <motion.h1
           className="text-5xl font-bold text-white drop-shadow-[0_0_30px_rgba(139,92,246,0.5)] md:text-7xl"
           variants={item}
         >
-          Mayur Upadhayay
+          {heroContent.name}
         </motion.h1>
 
         <motion.p className="text-xl text-gray-300 md:text-2xl" variants={item}>
-          Senior Software Engineer
+          {heroContent.title}
         </motion.p>
 
         <motion.p
           className="mx-auto max-w-2xl leading-relaxed text-gray-400"
           variants={item}
         >
-          A passionate Full Stack JavaScript developer with expertise in React
-          and Node. Currently leading an e-commerce project and consulting on
-          complex user interfaces, I&apos;m on a mission to push boundaries and
-          embrace continuous learning. I specialize in crafting cloud
-          applications with Next.js and AWS Lambda functions, leveraging the
-          power of innovation and technology.
+          {heroContent.description}
         </motion.p>
 
         <motion.div
           className="flex flex-col items-center gap-6 pt-4 sm:flex-row sm:justify-center"
           variants={item}
         >
-          <button className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-3 font-semibold text-white shadow-lg shadow-blue-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/70">
-            <span className="relative z-10">Explore Universe</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-          </button>
-
-          <button className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-purple-500 to-pink-600 px-8 py-3 font-semibold text-white shadow-lg shadow-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/70">
-            <span className="relative z-10">Contact</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-          </button>
+          {heroContent.buttons.map((button, index) => (
+            <button
+              key={button.label}
+              className={`group relative overflow-hidden rounded-lg px-8 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl ${
+                button.variant === "primary"
+                  ? "bg-gradient-to-r from-blue-500 to-purple-600 shadow-blue-500/50 hover:shadow-blue-500/70"
+                  : "bg-gradient-to-r from-purple-500 to-pink-600 shadow-purple-500/50 hover:shadow-purple-500/70"
+              }`}
+            >
+              <span className="relative z-10">{button.label}</span>
+              <div
+                className={`absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 ${
+                  button.variant === "primary"
+                    ? "bg-gradient-to-r from-blue-400 to-purple-500"
+                    : "bg-gradient-to-r from-purple-400 to-pink-500"
+                }`}
+              />
+            </button>
+          ))}
         </motion.div>
 
         <motion.a
-          href="#more"
+          href={heroContent.readMore.href}
           className="mt-4 inline-block text-sm text-purple-400 transition-colors hover:text-purple-300"
           variants={item}
         >
-          Read more
+          {heroContent.readMore.label}
         </motion.a>
       </motion.div>
     </div>

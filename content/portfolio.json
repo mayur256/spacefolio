@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "greeting": "Hello, my name is",
+    "name": "Mayur Upadhayay",
+    "title": "Senior Software Engineer",
+    "description": "A passionate Full Stack JavaScript developer with expertise in React and Node. Currently leading an e-commerce project and consulting on complex user interfaces, I'm on a mission to push boundaries and embrace continuous learning. I specialize in crafting cloud applications with Next.js and AWS Lambda functions, leveraging the power of innovation and technology.",
+    "buttons": [
+      {
+        "label": "Explore Universe",
+        "variant": "primary"
+      },
+      {
+        "label": "Contact",
+        "variant": "secondary"
+      }
+    ],
+    "readMore": {
+      "label": "Read more",
+      "href": "#more"
+    }
+  }
+}
