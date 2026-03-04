@@ -18,5 +18,27 @@
       "label": "Read more",
       "href": "#more"
     }
-  }
+  },
+  "skills": [
+    {
+      "group": "Frontend",
+      "color": "#7C3AED",
+      "skills": ["React", "Next.js", "Tailwind", "Three.js"]
+    },
+    {
+      "group": "Backend",
+      "color": "#2563EB",
+      "skills": ["Node.js", "Express", "NestJS"]
+    },
+    {
+      "group": "Cloud",
+      "color": "#059669",
+      "skills": ["AWS", "Lambda", "S3", "DynamoDB"]
+    },
+    {
+      "group": "Tools",
+      "color": "#DC2626",
+      "skills": ["Git", "Docker", "CI/CD"]
+    }
+  ]
 }

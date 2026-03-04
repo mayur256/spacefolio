@@ -1,17 +1,17 @@
 import { create } from "zustand";
 
-type Focus = "HERO" | "SYSTEM";
+type Stage = "hero" | "skills";
 
 interface UniverseState {
-  currentFocus: Focus;
+  stage: Stage;
   scrollProgress: number;
-  setFocus: (focus: Focus) => void;
+  setStage: (stage: Stage) => void;
   setScrollProgress: (progress: number) => void;
 }
 
 export const useUniverseStore = create<UniverseState>((set) => ({
-  currentFocus: "HERO",
+  stage: "hero",
   scrollProgress: 0,
-  setFocus: (focus) => set({ currentFocus: focus }),
+  setStage: (stage) => set({ stage }),
   setScrollProgress: (progress) => set({ scrollProgress: progress }),
 }));

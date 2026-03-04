@@ -2,8 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --space-deep: #080b14;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent-cyan: #22d3ee;
+  --accent-purple: #6d28d9;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background: #000;
+  background: var(--space-deep);
+  color: var(--text-primary);
+}
+
+.gradient-text-cosmic {
+  background: linear-gradient(135deg, #22d3ee 0%, #a78bfa 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

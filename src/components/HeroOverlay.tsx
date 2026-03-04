@@ -38,25 +38,28 @@ export default function HeroOverlay({ opacity }: HeroOverlayProps) {
         animate="show"
       >
         <motion.p
-          className="text-lg text-purple-300 md:text-xl"
+          className="text-sm font-semibold uppercase tracking-wider text-[#22d3ee]"
           variants={item}
         >
           {heroContent.greeting}
         </motion.p>
 
         <motion.h1
-          className="text-5xl font-bold text-white drop-shadow-[0_0_30px_rgba(139,92,246,0.5)] md:text-7xl"
+          className="text-5xl font-bold leading-tight tracking-tight text-[#f1f5f9] md:text-7xl"
           variants={item}
         >
-          {heroContent.name}
+          <span className="gradient-text-cosmic">{heroContent.name}</span>
         </motion.h1>
 
-        <motion.p className="text-xl text-gray-300 md:text-2xl" variants={item}>
+        <motion.p
+          className="text-xl font-light italic text-[#94a3b8] md:text-2xl"
+          variants={item}
+        >
           {heroContent.title}
         </motion.p>
 
         <motion.p
-          className="mx-auto max-w-2xl leading-relaxed text-gray-400"
+          className="mx-auto max-w-2xl font-light leading-relaxed text-[#94a3b8]"
           variants={item}
         >
           {heroContent.description}
