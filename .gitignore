@@ -3,3 +3,6 @@
 .next
 tsconfig.tsbuildinfo
 .env
+
+.amazonq
+examples
